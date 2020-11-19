@@ -25,6 +25,14 @@ namespace WebService.Models.Profiles
             //details map
             CreateMap<Details, DetailDto>();
 
+            //omdb map
+            CreateMap<Omdb, OmdbDto>();
+
+            //languages map
+            CreateMap<Languages, LanguageDto>();
+
+            //directors map
+            CreateMap<Directors, DirectorDto>();
 
             //used to add from other tables to dto
             /*CreateMap<Exampleclass, ExampleDto>()

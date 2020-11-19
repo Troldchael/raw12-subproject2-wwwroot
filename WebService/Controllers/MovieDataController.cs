@@ -408,5 +408,104 @@ namespace WebService.Controllers
 
     }
 
+    [ApiController]
+    [Route("api/omdbs")]
+    public class OmdbController : ControllerBase
+    {
+        IDataService _dataService;
+        private readonly IMapper _mapper;
+        private const int MaxPageSize = 25;
+
+        public OmdbController(IDataService dataService, IMapper mapper)
+        {
+            _dataService = dataService;
+            _mapper = mapper;
+        }
+
+        [HttpGet(Name = nameof(GetOmdbs))]
+        public IActionResult GetOmdbs(int page = 0, int pageSize = 10)
+        {
+            pageSize = CheckPageSize(pageSize);
+
+            var omdbs = _dataService.GetOmdbInfo(page, pageSize);
+
+            var result = CreateResult(page, pageSize, omdbs);
+
+            return Ok(result);
+        }
+
+
+        [HttpGet("{id}", Name = nameof(GetOmdb))]
+        public IActionResult GetOmdb(string id)
+        {
+            var omdbs = _dataService.GetOmdb(id);
+            if (omdbs == null)
+            {
+                return NotFound();
+            }
+
+            var dto = _mapper.Map<OmdbDto>(omdbs);
+            dto.Url = Url.Link(nameof(GetOmdb), new { id });
+
+            return Ok(dto);
+        }
+
+        private OmdbDto CreateOmdbElementDto(Omdb omdbs)
+        {
+            var dto = _mapper.Map<OmdbDto>(omdbs);
+            dto.Url = Url.Link(nameof(GetOmdb), new { id = omdbs.Tconst.Trim() }); //trim to fix id whitespace in urls
+
+            return dto;
+        }
+
+        //Helpers
+
+        private int CheckPageSize(int pageSize)
+        {
+            return pageSize > MaxPageSize ? MaxPageSize : pageSize;
+        }
+
+        private (string prev, string cur, string next) CreatePagingNavigation(int page, int pageSize, int count)
+        {
+            string prev = null;
+
+            if (page > 0)
+            {
+                prev = Url.Link(nameof(GetOmdbs), new { page = page - 1, pageSize });
+            }
+
+            string next = null;
+
+            if (page < (int)Math.Ceiling((double)count / pageSize) - 1)
+                next = Url.Link(nameof(GetOmdbs), new { page = page + 1, pageSize });
+
+            var cur = Url.Link(nameof(GetOmdbs), new { page, pageSize });
+
+            return (prev, cur, next);
+        }
+
+        private object CreateResult(int page, int pageSize, IList<Omdb> omdbs)
+        {
+            var items = omdbs.Select(CreateOmdbElementDto);
+
+            var count = _dataService.NumberOfOmdbs();
+
+            var navigationUrls = CreatePagingNavigation(page, pageSize, count);
+
+
+            var result = new
+            {
+                navigationUrls.prev,
+                navigationUrls.cur,
+                navigationUrls.next,
+                count,
+                items
+            };
+
+            return result;
+        }
+
+    }
+
 
 }

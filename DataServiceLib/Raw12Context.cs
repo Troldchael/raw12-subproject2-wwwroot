@@ -28,6 +28,9 @@ namespace DataServiceLib
         public DbSet<Movies> Movies { get; set; }
         public DbSet<Genres> Genres { get; set; }
         public DbSet<Details> Details { get; set; }
+        public DbSet<Omdb> Omdb { get; set; }
+        public DbSet<Languages> Languages { get; set; }
+        public DbSet<Directors> Directors { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -98,6 +101,25 @@ namespace DataServiceLib
             modelBuilder.Entity<Details>().Property(x => x.Startyear).HasColumnName("startyear");
             modelBuilder.Entity<Details>().Property(x => x.EndYear).HasColumnName("endyear");
             modelBuilder.Entity<Details>().Property(x => x.RunTimeMinutes).HasColumnName("runtimeminutes");
+
+            //omdb data table
+            modelBuilder.Entity<Omdb>().ToTable("omdb_data").HasKey(x => x.Tconst);
+            modelBuilder.Entity<Omdb>().Property(x => x.Tconst).HasColumnName("tconst");
+            modelBuilder.Entity<Omdb>().Property(x => x.Poster).HasColumnName("poster");
+            modelBuilder.Entity<Omdb>().Property(x => x.Awards).HasColumnName("awards");
+            modelBuilder.Entity<Omdb>().Property(x => x.Plot).HasColumnName("plot");
+
+            //languages table
+            modelBuilder.Entity<Languages>().ToTable("language").HasKey(x => x.TitleId);
+            modelBuilder.Entity<Languages>().Property(x => x.TitleId).HasColumnName("tconst");
+            modelBuilder.Entity<Languages>().Property(x => x.Ordering).HasColumnName("ordering");
+            modelBuilder.Entity<Languages>().Property(x => x.Language).HasColumnName("language");
+            modelBuilder.Entity<Languages>().Property(x => x.Region).HasColumnName("region");
+
+            //directors table
+            modelBuilder.Entity<Directors>().ToTable("directors").HasKey(x => x.DirectorId);
+            modelBuilder.Entity<Directors>().Property(x => x.TitleId).HasColumnName("title_id");
+            modelBuilder.Entity<Directors>().Property(x => x.DirectorId).HasColumnName("director_id");
         }
     }
 

@@ -458,5 +458,39 @@ namespace DataServiceLib.Framework
         {
             return DetailsToList().Count;
         }
+
+        // omdb dataservice
+        public IList<Omdb> OmdbToList()
+        {
+            var ctx = new Raw12Context();
+            var omdb = ctx.Omdb.ToList();
+            return omdb;
+        }
+
+        public IList<Omdb> GetOmdbs()
+        {
+            return OmdbToList();
+        }
+
+        public Omdb GetOmdb(string id)
+        {
+            var ctx = new Raw12Context();
+            var omdb = ctx.Omdb;
+
+            return omdb.FirstOrDefault(x => x.Tconst == id);
+        }
+
+        public IList<Omdb> GetOmdbInfo(int page, int pageSize)
+        {
+            return OmdbToList()
+                .Skip(page * pageSize)
+                .Take(pageSize)
+                .ToList();
+        }
+
+        public int NumberOfOmdbs()
+        {
+            return OmdbToList().Count;
+        }
     }
 }
