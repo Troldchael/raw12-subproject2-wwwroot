@@ -90,16 +90,16 @@ namespace DataServiceLib
         IList<Omdb> GetOmdbInfo(int page, int pageSize);
         int NumberOfOmdbs();
 
-       /* //directors interface
+        //directors interface
         IList<Directors> GetDirectors();
         Directors GetDirector(string id);
         IList<Directors> GetDirectorInfo(int page, int pageSize);
         int NumberOfDirectors();
-*/
-        /*//languages interface
+
+        //languages interface
         IList<Languages> GetLanguages();
-        Language GetLanguage(string id);
+        Languages GetLanguage(string id);
         IList<Languages> GetLanguageInfo(int page, int pageSize);
-        int NumberOfLanguages();*/
+        int NumberOfLanguages();
     }
 }

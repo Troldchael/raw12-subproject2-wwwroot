@@ -507,5 +507,201 @@ namespace WebService.Controllers
 
     }
 
+    [ApiController]
+    [Route("api/languages")]
+    public class LanguageController : ControllerBase
+    {
+        IDataService _dataService;
+        private readonly IMapper _mapper;
+        private const int MaxPageSize = 25;
 
+        public LanguageController(IDataService dataService, IMapper mapper)
+        {
+            _dataService = dataService;
+            _mapper = mapper;
+        }
+
+        [HttpGet(Name = nameof(GetLanguages))]
+        public IActionResult GetLanguages(int page = 0, int pageSize = 10)
+        {
+            pageSize = CheckPageSize(pageSize);
+
+            var languages = _dataService.GetLanguageInfo(page, pageSize);
+
+            var result = CreateResult(page, pageSize, languages);
+
+            return Ok(result);
+        }
+
+
+        [HttpGet("{id}", Name = nameof(GetLanguage))]
+        public IActionResult GetLanguage(string id)
+        {
+            var languages = _dataService.GetLanguage(id);
+            if (languages == null)
+            {
+                return NotFound();
+            }
+
+            var dto = _mapper.Map<LanguageDto>(languages);
+            dto.Url = Url.Link(nameof(GetLanguage), new { id });
+
+            return Ok(dto);
+        }
+
+        private LanguageDto CreateLanguageElementDto(Languages languages)
+        {
+            var dto = _mapper.Map<LanguageDto>(languages);
+            dto.Url = Url.Link(nameof(GetLanguage), new { id = languages.TitleId.Trim() }); //trim to fix id whitespace in urls
+
+            return dto;
+        }
+
+        //Helpers
+
+        private int CheckPageSize(int pageSize)
+        {
+            return pageSize > MaxPageSize ? MaxPageSize : pageSize;
+        }
+
+        private (string prev, string cur, string next) CreatePagingNavigation(int page, int pageSize, int count)
+        {
+            string prev = null;
+
+            if (page > 0)
+            {
+                prev = Url.Link(nameof(GetLanguages), new { page = page - 1, pageSize });
+            }
+
+            string next = null;
+
+            if (page < (int)Math.Ceiling((double)count / pageSize) - 1)
+                next = Url.Link(nameof(GetLanguages), new { page = page + 1, pageSize });
+
+            var cur = Url.Link(nameof(GetLanguages), new { page, pageSize });
+
+            return (prev, cur, next);
+        }
+
+        private object CreateResult(int page, int pageSize, IList<Languages> languages)
+        {
+            var items = languages.Select(CreateLanguageElementDto);
+
+            var count = _dataService.NumberOfLanguages();
+
+            var navigationUrls = CreatePagingNavigation(page, pageSize, count);
+
+
+            var result = new
+            {
+                navigationUrls.prev,
+                navigationUrls.cur,
+                navigationUrls.next,
+                count,
+                items
+            };
+
+            return result;
+        }
+
+    }
+
+    [ApiController]
+    [Route("api/directors")]
+    public class DirectorController : ControllerBase
+    {
+        IDataService _dataService;
+        private readonly IMapper _mapper;
+        private const int MaxPageSize = 25;
+
+        public DirectorController(IDataService dataService, IMapper mapper)
+        {
+            _dataService = dataService;
+            _mapper = mapper;
+        }
+
+        [HttpGet(Name = nameof(GetDirectors))]
+        public IActionResult GetDirectors(int page = 0, int pageSize = 10)
+        {
+            pageSize = CheckPageSize(pageSize);
+
+            var directors = _dataService.GetDirectorInfo(page, pageSize);
+
+            var result = CreateResult(page, pageSize, directors);
+
+            return Ok(result);
+        }
+
+
+        [HttpGet("{id}", Name = nameof(GetDirector))]
+        public IActionResult GetDirector(string id)
+        {
+            var directors = _dataService.GetDirector(id);
+            if (directors == null)
+            {
+                return NotFound();
+            }
+
+            var dto = _mapper.Map<DirectorDto>(directors);
+            dto.Url = Url.Link(nameof(GetDirector), new { id });
+
+            return Ok(dto);
+        }
+
+        private DirectorDto CreateDirectorElementDto(Directors directors)
+        {
+            var dto = _mapper.Map<DirectorDto>(directors);
+            dto.Url = Url.Link(nameof(GetDirector), new { id = directors.DirectorId.Trim() }); //trim to fix id whitespace in urls
+
+            return dto;
+        }
+
+        //Helpers
+
+        private int CheckPageSize(int pageSize)
+        {
+            return pageSize > MaxPageSize ? MaxPageSize : pageSize;
+        }
+
+        private (string prev, string cur, string next) CreatePagingNavigation(int page, int pageSize, int count)
+        {
+            string prev = null;
+
+            if (page > 0)
+            {
+                prev = Url.Link(nameof(GetDirectors), new { page = page - 1, pageSize });
+            }
+
+            string next = null;
+
+            if (page < (int)Math.Ceiling((double)count / pageSize) - 1)
+                next = Url.Link(nameof(GetDirectors), new { page = page + 1, pageSize });
+
+            var cur = Url.Link(nameof(GetDirectors), new { page, pageSize });
+
+            return (prev, cur, next);
+        }
+
+        private object CreateResult(int page, int pageSize, IList<Directors> directors)
+        {
+            var items = directors.Select(CreateDirectorElementDto);
+
+            var count = _dataService.NumberOfDirectors();
+
+            var navigationUrls = CreatePagingNavigation(page, pageSize, count);
+
+
+            var result = new
+            {
+                navigationUrls.prev,
+                navigationUrls.cur,
+                navigationUrls.next,
+                count,
+                items
+            };
+
+            return result;
+        }
+
+    }
 }

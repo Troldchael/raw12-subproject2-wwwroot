@@ -492,5 +492,73 @@ namespace DataServiceLib.Framework
         {
             return OmdbToList().Count;
         }
+
+        // language dataservice
+        public IList<Languages> LanguagesToList()
+        {
+            var ctx = new Raw12Context();
+            var languages = ctx.Languages.ToList();
+            return languages;
+        }
+
+        public IList<Languages> GetLanguages()
+        {
+            return LanguagesToList();
+        }
+
+        public Languages GetLanguage(string id)
+        {
+            var ctx = new Raw12Context();
+            var languages = ctx.Languages;
+
+            return languages.FirstOrDefault(x => x.TitleId == id);
+        }
+
+        public IList<Languages> GetLanguageInfo(int page, int pageSize)
+        {
+            return LanguagesToList()
+                .Skip(page * pageSize)
+                .Take(pageSize)
+                .ToList();
+        }
+
+        public int NumberOfLanguages()
+        {
+            return LanguagesToList().Count;
+        }
+
+        // director dataservice
+        public IList<Directors> DirectorsToList()
+        {
+            var ctx = new Raw12Context();
+            var directors = ctx.Directors.ToList();
+            return directors;
+        }
+
+        public IList<Directors> GetDirectors()
+        {
+            return DirectorsToList();
+        }
+
+        public Directors GetDirector(string id)
+        {
+            var ctx = new Raw12Context();
+            var directors = ctx.Directors;
+
+            return directors.FirstOrDefault(x => x.TitleId == id);
+        }
+
+        public IList<Directors> GetDirectorInfo(int page, int pageSize)
+        {
+            return DirectorsToList()
+                .Skip(page * pageSize)
+                .Take(pageSize)
+                .ToList();
+        }
+
+        public int NumberOfDirectors()
+        {
+            return DirectorsToList().Count;
+        }
     }
 }
