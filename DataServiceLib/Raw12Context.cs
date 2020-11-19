@@ -111,7 +111,7 @@ namespace DataServiceLib
 
             //languages table
             modelBuilder.Entity<Languages>().ToTable("language").HasKey(x => x.TitleId);
-            modelBuilder.Entity<Languages>().Property(x => x.TitleId).HasColumnName("tconst");
+            modelBuilder.Entity<Languages>().Property(x => x.TitleId).HasColumnName("title_id");
             modelBuilder.Entity<Languages>().Property(x => x.Ordering).HasColumnName("ordering");
             modelBuilder.Entity<Languages>().Property(x => x.Language).HasColumnName("language");
             modelBuilder.Entity<Languages>().Property(x => x.Region).HasColumnName("region");
