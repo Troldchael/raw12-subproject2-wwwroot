@@ -1,5 +1,7 @@
 ﻿console.log("before fetch");
 
+
+
 let getCategories = function(callback) {
 
     fetch("api/categories")
