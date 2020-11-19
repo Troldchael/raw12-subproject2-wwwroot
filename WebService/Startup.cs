@@ -40,7 +40,6 @@ namespace WebService
 
             app.UseRequestLogging();
 
-
             app.UseFileServer();
 
             app.UseRouting();
