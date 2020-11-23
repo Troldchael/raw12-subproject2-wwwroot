@@ -1,1 +1,17 @@
-﻿
+﻿body {
+    background-color: #282c34;
+    color: #abb2bf;
+    margin: auto 0;
+    font-family: arial;
+}
+
+#center {
+    width: 700px;
+    margin: 15px auto;
+}
+
+h1 {
+    font-size: 60px;
+    color: orange;
+    text-align: center;
+}
