@@ -7,7 +7,6 @@ let getActors = function(callback) {
 
     fetch("api/actors")
         .then(function(response) {
-
             return response.json();
         })
         .then(function(data) {

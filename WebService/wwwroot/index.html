@@ -13,6 +13,8 @@
 
         <h2>raw12 templates!</h2>
 
+        <div data-bind="template: currentTemplate"></div>
+
         <script type="text/html" id="frontpage">
         </script>
         <script type="text/html" id="searchresults">
@@ -36,8 +38,9 @@
             <div>
                 <ul data-bind="foreach: actors">
                     <li>
-                        <span data-bind="text: primaryName"></span>
-                        <span data-bind="text: nConst"></span>
+                        <h3>getActors test!</h3>
+                        <span data-bind="text: primaryName">Name: </span>
+                        <span data-bind="text: nConst">Id: </span>
                     </li>
                 </ul>
             </div>
