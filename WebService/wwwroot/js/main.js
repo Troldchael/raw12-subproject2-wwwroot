@@ -7,7 +7,7 @@ require.config({
     }
 });
 
-require(['knockout', 'viewModel'], function (ko, vm) {
+require(['knockout', 'actorModel'], function (ko, vm) {
     console.log(vm);
     ko.applyBindings(vm);
 });

@@ -8,6 +8,7 @@
 <body>
     <div id="center">
         <h1>Raw12 IMDB App</h1>
+
         <div id="searchpart"><input id="search" placeholder="Search" type="search" data-bind="value searchresult" /></div>
 
         <h2>raw12 templates!</h2>
@@ -30,8 +31,16 @@
         </script>
         <script type="text/html" id="browsemovies">
         </script>
+
         <script type="text/html" id="browseactors">
-            
+            <div>
+                <ul data-bind="foreach: actors">
+                    <li>
+                        <span data-bind="text: primaryName"></span>
+                        <span data-bind="text: nConst"></span>
+                    </li>
+                </ul>
+            </div>
         </script>
 
     </div>
