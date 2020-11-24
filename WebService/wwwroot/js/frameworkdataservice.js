@@ -1,17 +1,17 @@
-﻿console.log("before fetch");
+﻿// Framework dataservice
+
+console.log("before fetch");
 
 
+let getActors = function(callback) {
 
-let getCategories = function(callback) {
-
-    fetch("api/categories")
+    fetch("api/actors")
         .then(function(response) {
 
             return response.json();
         })
         .then(function(data) {
             callback(data);
-
         });
     
 };

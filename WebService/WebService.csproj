@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\js\frameworkdataservice.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.0" />
     <PackageReference Include="Moq" Version="4.15.1" />
@@ -20,7 +24,8 @@
   <ItemGroup>
     <None Include="wwwroot\css\style.css" />
     <None Include="wwwroot\index.html" />
-    <None Include="wwwroot\js\data.js" />
+    <None Include="wwwroot\js\frameworkdataservice.js" />
+    <None Include="wwwroot\js\moviedataservice.js" />
     <None Include="wwwroot\js\lib\knockout\knockout-latest.debug.js" />
     <None Include="wwwroot\js\lib\knockout\knockout-latest.debug.min.js" />
     <None Include="wwwroot\js\lib\knockout\knockout-latest.debug.min.js.map" />
