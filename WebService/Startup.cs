@@ -36,7 +36,7 @@ namespace WebService
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseCors();
+            app.UseCors(options => options.AllowAnyOrigin());
 
             app.UseMiddleware<RequestLoggerMiddleware>();
 
