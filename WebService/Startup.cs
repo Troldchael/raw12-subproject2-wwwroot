@@ -36,6 +36,8 @@ namespace WebService
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors();
+
             app.UseMiddleware<RequestLoggerMiddleware>();
 
             app.UseRequestLogging();

@@ -19,11 +19,15 @@ h1 {
 #search {
     background-color: #21252b;
     color: #f5c518;
-    margin: 10px 10px 10px 0;
     padding: 5px;
     border-radius: 3px;
     border-width: 0;
-    width: 300px;
+    width: 282px;
     text-align: center;
     font-size: 30px;
+}
+
+#searchpart {
+    margin: 0 auto;
+    width: 282px;
 }
