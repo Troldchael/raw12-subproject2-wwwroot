@@ -21,7 +21,7 @@ namespace WebService.Models.Profiles
             CreateMap<Users, UserElementDto>();
 
             //searchmap
-            CreateMap<StringSearchDto, SearchElementDto>();
+            CreateMap<SearchHistory, SearchElementDto>();
             CreateMap<SearchForCreationOrUpdateDto, StringSearchDto>();
 
             //ratingmap
@@ -34,6 +34,9 @@ namespace WebService.Models.Profiles
             //abookingmap
             CreateMap<ActorBookmarking, ABookElementDto>();
 
+            //stringsearchmap
+           /* CreateMap<SearchHistory, SearchElementDto>();
+            CreateMap<SearchForCreationOrUpdateDto, StringSearchDto>();*/
         }
 
 
