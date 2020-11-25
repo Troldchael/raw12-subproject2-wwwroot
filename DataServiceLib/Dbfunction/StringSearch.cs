@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 namespace WebService.Dbfunction
 {
     public class StringSearch
-    {
+    {/*
         UseEntityFramework(connectionString);
 
         private static void UseEntityFramework(connectionString)
@@ -27,6 +27,6 @@ namespace WebService.Dbfunction
                 Console.WriteLine($"{searchResult.UserId}, {searchResult.Timestamp}, {searchResult.Keyword}");
             }
 
-        }
+        }*/
     }
 }

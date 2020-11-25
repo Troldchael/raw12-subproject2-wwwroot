@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using DataServiceLib.Framework;
 using DataServiceLib.Moviedata;
@@ -27,6 +28,12 @@ namespace DataServiceLib
         SearchHistory GetSearch(int id);
         IList<SearchHistory> GetSearchInfo(int page, int pageSize);
         int NumberOfSearches();
+
+        //stringsearch interface
+        IQueryable<SearchHistory> StringSearches();
+        SearchHistory GetStringSearch(int id);
+        IList<SearchHistory> GetStringSearchInfo(int page, int pageSize);
+        int NumberOfStringSearches();
 
         //ratings interface
         IList<RatingHistory> GetRatings();

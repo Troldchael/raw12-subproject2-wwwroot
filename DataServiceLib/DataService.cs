@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using DataServiceLib.Moviedata;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataServiceLib.Framework
 {
@@ -165,6 +167,46 @@ namespace DataServiceLib.Framework
         }
 
         public int NumberOfSearches()
+        {
+            return SearchToList().Count;
+        }
+
+        //string search dataservice
+        public IQueryable<SearchHistory> StringSearches()
+        {
+            var ctx = new Raw12Context();
+            var stringsearches = ctx.SearchHistory.FromSqlInterpolated($"select * from string_search({"%ab%"})");
+
+            //IList searchlist = stringsearches; 
+
+            return stringsearches;
+
+            //example db function code
+            /*//var result = ctx.SearchResults.FromSqlRaw("select * from search({0})", "%ab%");
+            var result = ctx.SearchHistory.FromSqlInterpolated($"select * from string_search({"%ab%"})");
+
+            foreach (var searchResult in result)
+            {
+                Console.WriteLine($"{searchResult.UserId}, {searchResult.Timestamp}, {searchResult.Keyword}");
+            }*/
+        }
+        public SearchHistory GetStringSearch(int id)
+        {
+            var ctx = new Raw12Context();
+            var searches = ctx.SearchHistory;
+
+            return searches.FirstOrDefault(x => x.UserId == id);
+        }
+
+        public IList<SearchHistory> GetStringSearchInfo(int page, int pageSize)
+        {
+            return SearchToList()
+                .Skip(page * pageSize)
+                .Take(pageSize)
+                .ToList();
+        }
+
+        public int NumberOfStringSearches()
         {
             return SearchToList().Count;
         }

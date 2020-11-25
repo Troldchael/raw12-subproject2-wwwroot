@@ -195,7 +195,7 @@ namespace WebService.Controllers
         [HttpPost]
         public IActionResult CreateSearch(SearchForCreationOrUpdateDto searchUpdateDto)
         {
-            var searches = _mapper.Map<SearchHistory>(searchUpdateDto);
+            var searches = _mapper.Map<StringSearchDto>(searchUpdateDto);
 
             _dataService.CreateSearch(searches);
 
@@ -205,7 +205,7 @@ namespace WebService.Controllers
         [HttpPut("{id}")]
         public IActionResult UpdateSearch(int id, SearchForCreationOrUpdateDto searchUpdateDto)
         {
-            var searches = _mapper.Map<SearchHistory>(searchUpdateDto);
+            var searches = _mapper.Map<StringSearchDto>(searchUpdateDto);
 
             searches.UserId = id; //this fixes the id null value
 
@@ -229,7 +229,7 @@ namespace WebService.Controllers
             return NoContent();
         }
 
-        private SearchElementDto CreateSearchElementDto(SearchHistory searches)
+        private SearchElementDto CreateSearchElementDto(StringSearchDto searches)
         {
 
             var dto = _mapper.Map<SearchElementDto>(searches);
@@ -267,7 +267,7 @@ namespace WebService.Controllers
             return (prev, cur, next);
         }
 
-        private object CreateResult(int page, int pageSize, IList<SearchHistory> searches)
+        private object CreateResult(int page, int pageSize, IList<StringSearchDto> searches)
         {
             var items = searches.Select(CreateSearchElementDto);
 
