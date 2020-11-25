@@ -10,15 +10,15 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebService.Controllers
 {
-    [ApiController]
+    /*[ApiController]
     [Route("api/stringsearches")]
     public class StringsearchController : ControllerBase
     {
-        IDataService _dataService;
+        FrameworkIDataService _dataService;
         private readonly IMapper _mapper;
         private const int MaxPageSize = 25;
 
-        public StringsearchController(IDataService dataService, IMapper mapper)
+        public StringsearchController(FrameworkIDataService dataService, IMapper mapper)
         {
             _dataService = dataService;
             _mapper = mapper;
@@ -107,7 +107,7 @@ namespace WebService.Controllers
             return result;
         }
 
-    }
+    }*/
 
 
 }

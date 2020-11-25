@@ -22,7 +22,9 @@ namespace WebService
         {
             services.AddControllers();
 
-            services.AddSingleton<IDataService, DataService>();
+            services.AddSingleton<MovieIDataService, MovieDataService>();
+
+            services.AddSingleton<FrameworkIDataService, FrameworkDataService>();
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
