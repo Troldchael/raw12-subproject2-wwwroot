@@ -35,8 +35,8 @@ namespace WebService.Models.Profiles
             CreateMap<ActorBookmarking, ABookElementDto>();
 
             //stringsearchmap
-           /* CreateMap<SearchHistory, SearchElementDto>();
-            CreateMap<SearchForCreationOrUpdateDto, StringSearchDto>();*/
+            CreateMap<SearchHistory, StringSearchDto>();
+            
         }
 
 

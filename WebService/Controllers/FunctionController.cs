@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebService.Controllers
 {
-    /*[ApiController]
+    [ApiController]
     [Route("api/stringsearches")]
     public class StringsearchController : ControllerBase
     {
@@ -37,7 +37,7 @@ namespace WebService.Controllers
         }
 
 
-        [HttpGet("{id}", Name = nameof(GetStringSearch))]
+        [HttpGet("{n}", Name = nameof(GetStringSearch))]
         public IActionResult GetStringSearch(int id)
         {
             var searches = _dataService.GetStringSearch(id);
@@ -52,7 +52,7 @@ namespace WebService.Controllers
             return Ok(dto);
         }
 
-        private StringSearchDto CreateStringSearchDto(StringSearchDto searches)
+        private StringSearchDto CreateStringSearchDto(SearchHistory searches)
         {
             var dto = _mapper.Map<StringSearchDto>(searches);
             dto.Url = Url.Link(nameof(GetStringSearch), new { id = searches.UserId });
@@ -107,7 +107,7 @@ namespace WebService.Controllers
             return result;
         }
 
-    }*/
+    }
 
 
 }
