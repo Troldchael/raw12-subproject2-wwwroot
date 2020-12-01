@@ -1,33 +1,8 @@
-﻿body {
-    background-color: #282c34;
-    color: #abb2bf;
-    margin: auto 0;
-    font-family: arial;
+﻿.product {
+    border: 2px solid black;
+    margin-top: 20px;
 }
 
-#center {
-    width: 700px;
-    margin: 15px auto;
-}
-
-h1 {
-    font-size: 60px;
-    color: #f5c518;
-    text-align: center;
-}
-
-#search {
-    background-color: #21252b;
-    color: #f5c518;
-    padding: 5px;
-    border-radius: 3px;
-    border-width: 0;
-    width: 282px;
-    text-align: center;
-    font-size: 30px;
-}
-
-#searchpart {
-    margin: 0 auto;
-    width: 282px;
+.navigation-buttons {
+    margin-top: 20px;
 }
