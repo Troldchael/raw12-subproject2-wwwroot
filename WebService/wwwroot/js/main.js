@@ -15,6 +15,18 @@ require(['knockout', 'text'], (ko) => {
 
     });
 
+    ko.components.register('browse-movies', {
+        viewModel: { require: "components/movie/movieList" },
+        template: { require: "text!components/movie/movieList.html" }
+
+    });
+
+    ko.components.register('rating-history', {
+        viewModel: { require: "components/rating/ratingList" },
+        template: { require: "text!components/rating/ratingList.html" }
+
+    });
+
 
 });
 

@@ -1,19 +1,19 @@
-﻿<h2>Browse actors</h2>
+﻿<h2>Browse movies</h2>
 
 <div>
     <div>
         Page size: <select data-bind="options: pageSizes, selectedOptions: selectedPageSize"></select>
     </div>
-    <div data-bind="foreach: actors">
-        <div class="actor">
+    <div data-bind="foreach: movies">
+        <div class="movie">
             <div>
                 Link: <span data-bind="text: url"></span>
             </div>
             <div>
-                <!--Actor ID: <span data-bind="text: nconst"></span>-->
+                Title: <span data-bind="text: primaryTitle"></span>
             </div>
             <div>
-                Actor name: <span data-bind="text: primaryName"></span>
+                Type: <span data-bind="text: titleType"></span>
             </div>
         </div>
     </div>
