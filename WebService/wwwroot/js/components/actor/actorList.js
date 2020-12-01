@@ -7,22 +7,22 @@
         let next = ko.observable();
 
         let getData = url => {
-            dataservice.getProducts(url, data => {
+            dataservice.getActors(url, data => {
                 pageSizes(data.pageSizes);
                 prev(data.prev || undefined);
                 next(data.next || undefined);
-                products(data.items);
+                actors(data.items);
             });
         }
 
-        let showPrev = product => {
+        let showPrev = actor => {
             console.log(prev());
             getData(prev());
         }
 
         let enablePrev = ko.computed(() => prev() !== undefined);
 
-        let showNext = product => {
+        let showNext = actor => {
             console.log(next());
             getData(next());
         }
@@ -31,12 +31,10 @@
 
         selectedPageSize.subscribe(() => {
             var size = selectedPageSize()[0];
-            getData(dataservice.getProductsUrlWithPageSize(size));
+            getData(dataservice.getActorsUrlWithPageSize(size));
         });
 
         getData();
-
-
 
         return {
             pageSizes,

@@ -9,9 +9,9 @@
 
 require(['knockout', 'text'], (ko) => {
 
-    ko.components.register('product-list', {
-        viewModel: { require: "components/product/productList"},
-        template: { require: "text!components/product/productList.html" }
+    ko.components.register('browse-actors', {
+        viewModel: { require: "components/actor/actorList"},
+        template: { require: "text!components/actor/actorList.html" }
 
     });
 

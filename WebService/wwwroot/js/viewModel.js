@@ -1,6 +1,6 @@
 ﻿define(['knockout'], (ko) => {
 
-    let currentComponent = ko.observable("product-list");
+    let currentComponent = ko.observable("browse-actors");
 
     return {
         currentComponent
