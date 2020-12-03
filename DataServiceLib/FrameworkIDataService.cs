@@ -21,8 +21,8 @@ namespace DataServiceLib
 
         // search interface
         IList<SearchHistory> GetSearches();
+        IList<SearchHistory> GetStringSearches(string keyword);
         void CreateSearch(SearchHistory searches);
-        bool DoSearch(SearchHistory searches, string keyword);
         bool UpdateSearch(SearchHistory searches);
         bool DeleteSearch(int id);
         SearchHistory GetSearch(int id);

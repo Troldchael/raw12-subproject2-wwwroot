@@ -40,7 +40,6 @@ namespace WebService.Controllers
             return Ok(result);
         }
 
-
         [HttpGet("{id}", Name = nameof(GetUser))]
         public IActionResult GetUser(int id)
         {
@@ -176,6 +175,18 @@ namespace WebService.Controllers
             return Ok(result);
         }
 
+        // string search get method 
+        [HttpGet("{word}", Name = nameof(GetStringSearches))]
+        public IActionResult GetStringSearches(int page = 0, int pageSize = 10)
+        {
+            pageSize = CheckPageSize(pageSize);
+
+            var searches = _dataService.GetSearchInfo(page, pageSize);
+
+            var result = CreateResult(page, pageSize, searches);
+
+            return Ok(result);
+        }
 
         [HttpGet("{id}", Name = nameof(GetSearch))]
         public IActionResult GetSearch(int id)
@@ -202,21 +213,6 @@ namespace WebService.Controllers
             return Created("", searches);
         }
 
-        [HttpPost("{word}", Name = nameof(GetSearches))]
-        public IActionResult DoSearch(string word)
-        {
-            var searchstring = _dataService.DoSearch(word);
-            if (searchstring == null)
-            {
-                return NotFound();
-            }
-
-            var dto = _mapper.Map<StringSearchDto>(searchstring);
-            //dto.Url = Url.Link(nameof(GetSearch), new { id });
-
-            return Ok(dto);
-        }
-
         [HttpPut("{id}")]
         public IActionResult UpdateSearch(int id, SearchForCreationOrUpdateDto searchUpdateDto)
         {
@@ -230,7 +226,6 @@ namespace WebService.Controllers
             }
 
             return NoContent();
-
         }
 
         [HttpDelete("{id}")]
@@ -246,7 +241,6 @@ namespace WebService.Controllers
 
         private SearchElementDto CreateSearchElementDto(SearchHistory searches)
         {
-
             var dto = _mapper.Map<SearchElementDto>(searches);
 
             dto.Url = Url.Link(nameof(GetSearch), new { id = searches.UserId });
