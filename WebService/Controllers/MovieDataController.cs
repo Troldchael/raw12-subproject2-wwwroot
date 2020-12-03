@@ -16,11 +16,11 @@ namespace WebService.Controllers
     [Route("api/actors")]
     public class ActorController : ControllerBase
     {
-        IDataService _dataService;
+        MovieIDataService _dataService;
         private readonly IMapper _mapper;
         private const int MaxPageSize = 25;
 
-        public ActorController(IDataService dataService, IMapper mapper)
+        public ActorController(MovieIDataService dataService, IMapper mapper)
         {
             _dataService = dataService;
             _mapper = mapper;
@@ -115,11 +115,11 @@ namespace WebService.Controllers
     [Route("api/movies")]
     public class MovieController : ControllerBase
     {
-        IDataService _dataService;
+        MovieIDataService _dataService;
         private readonly IMapper _mapper;
         private const int MaxPageSize = 25;
 
-        public MovieController(IDataService dataService, IMapper mapper)
+        public MovieController(MovieIDataService dataService, IMapper mapper)
         {
             _dataService = dataService;
             _mapper = mapper;
@@ -214,11 +214,11 @@ namespace WebService.Controllers
     [Route("api/genres")]
     public class GenreController : ControllerBase
     {
-        IDataService _dataService;
+        MovieIDataService _dataService;
         private readonly IMapper _mapper;
         private const int MaxPageSize = 25;
 
-        public GenreController(IDataService dataService, IMapper mapper)
+        public GenreController(MovieIDataService dataService, IMapper mapper)
         {
             _dataService = dataService;
             _mapper = mapper;
@@ -313,11 +313,11 @@ namespace WebService.Controllers
     [Route("api/details")]
     public class DetailController : ControllerBase
     {
-        IDataService _dataService;
+        MovieIDataService _dataService;
         private readonly IMapper _mapper;
         private const int MaxPageSize = 25;
 
-        public DetailController(IDataService dataService, IMapper mapper)
+        public DetailController(MovieIDataService dataService, IMapper mapper)
         {
             _dataService = dataService;
             _mapper = mapper;
@@ -412,11 +412,11 @@ namespace WebService.Controllers
     [Route("api/omdbs")]
     public class OmdbController : ControllerBase
     {
-        IDataService _dataService;
+        MovieIDataService _dataService;
         private readonly IMapper _mapper;
         private const int MaxPageSize = 25;
 
-        public OmdbController(IDataService dataService, IMapper mapper)
+        public OmdbController(MovieIDataService dataService, IMapper mapper)
         {
             _dataService = dataService;
             _mapper = mapper;
@@ -511,11 +511,11 @@ namespace WebService.Controllers
     [Route("api/languages")]
     public class LanguageController : ControllerBase
     {
-        IDataService _dataService;
+        MovieIDataService _dataService;
         private readonly IMapper _mapper;
         private const int MaxPageSize = 25;
 
-        public LanguageController(IDataService dataService, IMapper mapper)
+        public LanguageController(MovieIDataService dataService, IMapper mapper)
         {
             _dataService = dataService;
             _mapper = mapper;
@@ -610,11 +610,11 @@ namespace WebService.Controllers
     [Route("api/directors")]
     public class DirectorController : ControllerBase
     {
-        IDataService _dataService;
+        MovieIDataService _dataService;
         private readonly IMapper _mapper;
         private const int MaxPageSize = 25;
 
-        public DirectorController(IDataService dataService, IMapper mapper)
+        public DirectorController(MovieIDataService dataService, IMapper mapper)
         {
             _dataService = dataService;
             _mapper = mapper;

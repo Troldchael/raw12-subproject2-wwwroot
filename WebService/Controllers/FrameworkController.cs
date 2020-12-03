@@ -17,12 +17,12 @@ namespace WebService.Controllers
     [Route("api/users")]
     public class UsersController : ControllerBase
     {
-        private readonly IDataService _dataService;
+        private readonly FrameworkIDataService _dataService;
         private readonly IMapper _mapper;
         private const int MaxPageSize = 10;
 
 
-        public UsersController(IDataService dataService, IMapper mapper)
+        public UsersController(FrameworkIDataService dataService, IMapper mapper)
         {
             _dataService = dataService;
             _mapper = mapper;
@@ -154,11 +154,11 @@ namespace WebService.Controllers
     [Route("api/searches")]
     public class SearchController : ControllerBase
     {
-        private readonly IDataService _dataService;
+        private readonly FrameworkIDataService _dataService;
         private readonly IMapper _mapper;
         private const int MaxPageSize = 25;
 
-        public SearchController(IDataService dataService, IMapper mapper)
+        public SearchController(FrameworkIDataService dataService, IMapper mapper)
         {
             _dataService = dataService;
             _mapper = mapper;
@@ -200,6 +200,21 @@ namespace WebService.Controllers
             _dataService.CreateSearch(searches);
 
             return Created("", searches);
+        }
+
+        [HttpPost("{word}", Name = nameof(GetSearches))]
+        public IActionResult DoSearch(string word)
+        {
+            var searchstring = _dataService.DoSearch(word);
+            if (searchstring == null)
+            {
+                return NotFound();
+            }
+
+            var dto = _mapper.Map<StringSearchDto>(searchstring);
+            //dto.Url = Url.Link(nameof(GetSearch), new { id });
+
+            return Ok(dto);
         }
 
         [HttpPut("{id}")]
@@ -294,11 +309,11 @@ namespace WebService.Controllers
     [Route("api/ratings")]
     public class RatingsController : ControllerBase
     {
-        private readonly IDataService _dataService;
+        private readonly FrameworkIDataService _dataService;
         private readonly IMapper _mapper;
         private const int MaxPageSize = 25;
 
-        public RatingsController(IDataService dataService, IMapper mapper)
+        public RatingsController(FrameworkIDataService dataService, IMapper mapper)
         {
             _dataService = dataService;
             _mapper = mapper;
@@ -435,12 +450,12 @@ namespace WebService.Controllers
     [Route("api/titlebookings")]
     public class TitleBookController : ControllerBase
     {
-        private readonly IDataService _dataService;
+        private readonly FrameworkIDataService _dataService;
         private readonly IMapper _mapper;
         private const int MaxPageSize = 25;
 
 
-        public TitleBookController(IDataService dataService, IMapper mapper)
+        public TitleBookController(FrameworkIDataService dataService, IMapper mapper)
         {
             _dataService = dataService;
             _mapper = mapper;
@@ -536,10 +551,10 @@ namespace WebService.Controllers
     [Route("api/actorbookings")]
     public class ActorBookController : ControllerBase
     {
-        private readonly IDataService _dataService;
+        private readonly FrameworkIDataService _dataService;
         private readonly IMapper _mapper;
         private const int MaxPageSize = 25;
-        public ActorBookController(IDataService dataService, IMapper mapper)
+        public ActorBookController(FrameworkIDataService dataService, IMapper mapper)
         {
             _dataService = dataService;
             _mapper = mapper;

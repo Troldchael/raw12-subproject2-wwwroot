@@ -9,7 +9,9 @@
     let isActive = element => {
         return element.toLowerCase() === currentComponent() ? "active" : "";
     }
-
+    let actorsComponent = ko.observable("browse-actors");
+    let moviesComponent = ko.observable("browse-movies");
+    let ratingsComponent = ko.observable("rating-history");
     postman.subscribe("changeContent", component => {
         changeContent(component);
     });
@@ -18,5 +20,7 @@
         menuElements,
         changeContent,
         isActive
-    };
+        actorsComponent,
+        moviesComponent,
+        ratingsComponen };
 });
