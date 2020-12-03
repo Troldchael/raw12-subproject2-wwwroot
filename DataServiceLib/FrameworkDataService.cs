@@ -126,7 +126,7 @@ namespace DataServiceLib
         }
 
         //string search //make a /keyword?= 
-        public bool DoSearch(SearchHistory stringsearches, string keyword)
+        /*public bool DoSearch(SearchHistory stringsearches, string keyword)
         {
             var cont = new Raw12Context();
             stringsearches = cont.SearchHistory.FromSqlInterpolated($"select * from string_search({"%" + keyword + "%"})");
@@ -138,7 +138,7 @@ namespace DataServiceLib
             cont.SaveChanges();
 
             return true;
-        }
+        }*/
 
         public bool UpdateSearch(SearchHistory searches)
         {
