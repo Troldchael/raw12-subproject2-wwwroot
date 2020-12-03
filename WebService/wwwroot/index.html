@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿<!--<!DOCTYPE html>
 <html>
 <head>
     <title>index</title>
@@ -10,5 +10,62 @@
         <h1>Raw12 IMDB App</h1>
         <input id="search" placeholder="Search" type="search" data-bind="value name"/>
     </div>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>index</title>
+    <link href="css/lib/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="container-fluid">
+    <div>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+
+    </div>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navigation</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav" data-bind="foreach: menuElements">
+                <li class="nav-item" data-bind="css: $parent.isActive($data)">
+                    <a class="nav-link" href="#" data-bind="click: $parent.changeContent">
+                        <span data-bind="text: $data"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--test-->
+    <!--<form>
+        <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+            </div>
+        </div>
+    </form>-->
+
+
+    <div data-bind="component: {name: currentComponent}"></div>
+
+
+    <script data-main="js/main.js" src="js/lib/require.js/require.min.js"></script>
+
 </body>
 </html>
