@@ -125,6 +125,21 @@ namespace DataServiceLib
             cont.SaveChanges();
         }
 
+        //string search //make a /keyword?= 
+        public bool DoSearch(SearchHistory stringsearches, string keyword)
+        {
+            var cont = new Raw12Context();
+            stringsearches = cont.SearchHistory.FromSqlInterpolated($"select * from string_search({"%" + keyword + "%"})");
+
+            var maxId = SearchToList().Max(x => x.UserId);
+            stringsearches.UserId = maxId + 1;
+
+            cont.SearchHistory.Add(stringsearches);
+            cont.SaveChanges();
+
+            return true;
+        }
+
         public bool UpdateSearch(SearchHistory searches)
         {
             var cont = new Raw12Context();
@@ -170,47 +185,6 @@ namespace DataServiceLib
         {
             return SearchToList().Count;
         }
-
-        //string search dataservice
-        public IQueryable<SearchHistory> StringSearches()
-        {
-            var ctx = new Raw12Context();
-            var stringsearches = ctx.SearchHistory.FromSqlInterpolated($"select * from string_search({"%ab%"})");
-
-            //IList searchlist = stringsearches; 
-
-            return stringsearches;
-
-            //example db function code
-            /*//var result = ctx.SearchResults.FromSqlRaw("select * from search({0})", "%ab%");
-            var result = ctx.SearchHistory.FromSqlInterpolated($"select * from string_search({"%ab%"})");
-
-            foreach (var searchResult in result)
-            {
-                Console.WriteLine($"{searchResult.UserId}, {searchResult.Timestamp}, {searchResult.Keyword}");
-            }*/
-        }
-        public SearchHistory GetStringSearch(int id)
-        {
-            var ctx = new Raw12Context();
-            var searches = ctx.SearchHistory;
-
-            return searches.FirstOrDefault(x => x.UserId == id);
-        }
-
-        public IList<SearchHistory> GetStringSearchInfo(int page, int pageSize)
-        {
-            return SearchToList()
-                .Skip(page * pageSize)
-                .Take(pageSize)
-                .ToList();
-        }
-
-        public int NumberOfStringSearches()
-        {
-            return SearchToList().Count;
-        }
-
 
         // ratings dataservice
         public IList<RatingHistory> RatingsToList()

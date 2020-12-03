@@ -52,9 +52,9 @@ namespace DataServiceLib
         int NumberOfLanguages();
 		
 		//moviecompare interface
-        IList<MovieCompare> GetCompares();
+        /*IList<MovieCompare> GetCompares();
         MovieCompare GetCompare(string id);
         IList<MovieCompare> GetCompareInfo(int page, int pageSize);
-        int NumberOfCompares();
+        int NumberOfCompares();*/
     }
 }

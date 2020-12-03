@@ -8,7 +8,6 @@
         //properties
         public Movies TitleId { get; set; }
         public Movies PrimaryTitle { get; set; }
-
         public Genres Genre { get; set; }
 
         public Details Startyear { get; set; }

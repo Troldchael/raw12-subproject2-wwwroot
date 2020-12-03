@@ -22,17 +22,12 @@ namespace DataServiceLib
         // search interface
         IList<SearchHistory> GetSearches();
         void CreateSearch(SearchHistory searches);
+        bool DoSearch(SearchHistory searches, string keyword);
         bool UpdateSearch(SearchHistory searches);
         bool DeleteSearch(int id);
         SearchHistory GetSearch(int id);
         IList<SearchHistory> GetSearchInfo(int page, int pageSize);
         int NumberOfSearches();
-
-        //stringsearch interface
-        IQueryable<SearchHistory> StringSearches();
-        SearchHistory GetStringSearch(int id);
-        IList<SearchHistory> GetStringSearchInfo(int page, int pageSize);
-        int NumberOfStringSearches();
 
         //ratings interface
         IList<RatingHistory> GetRatings();

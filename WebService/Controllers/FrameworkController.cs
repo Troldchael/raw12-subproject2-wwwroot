@@ -202,6 +202,21 @@ namespace WebService.Controllers
             return Created("", searches);
         }
 
+        [HttpPost("{word}", Name = nameof(GetSearches))]
+        public IActionResult DoSearch(string word)
+        {
+            var searchstring = _dataService.DoSearch(word);
+            if (searchstring == null)
+            {
+                return NotFound();
+            }
+
+            var dto = _mapper.Map<StringSearchDto>(searchstring);
+            //dto.Url = Url.Link(nameof(GetSearch), new { id });
+
+            return Ok(dto);
+        }
+
         [HttpPut("{id}")]
         public IActionResult UpdateSearch(int id, SearchForCreationOrUpdateDto searchUpdateDto)
         {
