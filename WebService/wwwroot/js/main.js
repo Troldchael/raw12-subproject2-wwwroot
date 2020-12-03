@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿require.config({
     baseUrl: "js",
     paths: {
@@ -35,3 +36,6 @@ require(['knockout', 'viewModel'], (ko, vm) => {
 
     ko.applyBindings(vm);
 });
+=======
+﻿
+>>>>>>> parent of 06549ac... Bootstrap
