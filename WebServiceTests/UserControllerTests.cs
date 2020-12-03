@@ -15,13 +15,13 @@ namespace WebServiceTests
 {
     public class UserControllerTests
     {
-        private Mock<IDataService> _dataServiceMock;
+        private Mock<FrameworkIDataService> _dataServiceMock;
         private Mock<IMapper> _mapperMock;
         private Mock<IUrlHelper> _urlMock;
 
         public UserControllerTests()
         {
-            _dataServiceMock = new Mock<IDataService>();
+            _dataServiceMock = new Mock<FrameworkIDataService>();
             _mapperMock = new Mock<IMapper>();
             _urlMock = new Mock<IUrlHelper>();
         }

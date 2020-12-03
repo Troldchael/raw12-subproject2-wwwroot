@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿define(['knockout', 'postman'], (ko, postman) => {
     let currentComponent = ko.observable("home");
     let menuElements = ["Home", "Movies", "Actors", "Compare", "User Page"];
@@ -19,4 +20,21 @@
         changeContent,
         isActive
     };
+=======
+﻿define(['knockout'], (ko) => {
+
+    //let currentComponent = ko.observable("browse-actors");
+
+    let actorsComponent = ko.observable("browse-actors");
+    let moviesComponent = ko.observable("browse-movies");
+    let ratingsComponent = ko.observable("rating-history");
+
+    return {
+        //currentComponent,
+        actorsComponent,
+        moviesComponent,
+        ratingsComponent
+    };
+
+>>>>>>> nicobranch1
 });

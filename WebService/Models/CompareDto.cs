@@ -1,13 +1,17 @@
-﻿namespace DataServiceLib.Moviedata
-{
-    public class MovieCompare
-    {
-        //trying to make an compare class for moviecompare, that contains data from Actors, Details, Genres and Movies
-        //not sure this will be used
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using DataServiceLib.Moviedata;
 
-        //properties
+namespace WebService.Models
+{
+    public class CompareDto
+    {
         public Movies TitleId { get; set; }
         public Movies PrimaryTitle { get; set; }
+
         public Genres Genre { get; set; }
 
         public Details Startyear { get; set; }
@@ -16,9 +20,5 @@
 
         public Actors Nconst { get; set; }
         public Actors PrimaryName { get; set; }
-
-
-        //navigation poperties
-        //public string Type { get; set; } //dummy
     }
 }
