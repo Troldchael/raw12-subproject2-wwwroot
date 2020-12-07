@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿<!--<!DOCTYPE html>
 <html>
 <head>
     <title>RAW12 IMDB app!</title>
@@ -8,43 +8,118 @@
     <h1>Raw12 IMDB test app</h1>
 
     <!--<div data-bind="component: currentComponent"></div>-->
-    <!--<div data-bind="component: actorsComponent"></div>
+<!--<div data-bind="component: actorsComponent"></div>
+<div data-bind="component: moviesComponent"></div>
+
+<h2>see your ratings woooow spa!!!</h2>
+<div data-bind="component: ratingsComponent"></div>-->
+<!--<div data-bind="component: bookingsComponent"></div>-->
+<!--<script data-main="js/main.js" src="js/lib/require.js/require.min.js"></script>
+</body>
+</html>-->
+<!--Mads-->
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <title>index</title>
+    <link href="css/lib/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="container-fluid">
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navigation</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav" data-bind="foreach: menuElements">
+                <li class="nav-item" data-bind="css: $parent.isActive($data)">
+                    <a class="nav-link" href="#" data-bind="click: $parent.changeContent">
+
+                        <span data-bind="text: $data"></span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </nav> -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RAW12 IMDB app!</title>
+    <link href="css/lib/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Raw12 IMDB test app</h1>
+
+    <div data-bind="component: currentComponent"></div>
+    <div data-bind="component: actorsComponent"></div>
     <div data-bind="component: moviesComponent"></div>
+    <div data-bind="component: ratingsComponent"></div>
+    <div data-bind="component: bookingsComponent"></div>
 
-    <h2>see your ratings woooow spa!!!</h2>
-    <div data-bind="component: ratingsComponent"></div>-->
-    <!--<div data-bind="component: bookingsComponent"></div>-->
-    <!--<script data-main="js/main.js" src="js/lib/require.js/require.min.js"></script>
-    </body>
-    </html>-->
-    
-    <!--Mads-->
+    <script data-main="js/main.js" src="js/lib/require.js/require.min.js"></script>
+    <script data-main="js/bootstrap.js" src="js/lib/require.js/require.min.js"></script>
 
-    <!DOCTYPE html>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+
+
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#burgerdrop">
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="burgerdrop">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+</body>
+    </html>
+
+
+    <!--<!DOCTYPE html>
     <html>
     <head>
         <title>index</title>
         <link href="css/lib/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     </head>
-    <body class="container-fluid">
-
-
-
+    <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navigation</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav" data-bind="foreach: menuElements">
-                    <li class="nav-item" data-bind="css: $parent.isActive($data)">
-                        <a class="nav-link" href="#" data-bind="click: $parent.changeContent">
-                            <span data-bind="text: $data"></span>
-                        </a>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                     </li>
                 </ul>
             </div>
-        </nav>
+        </nav>-->
 
         <div>
             <form class="form-inline my-2 my-lg-0">
@@ -55,28 +130,28 @@
 
         <!--User Page login-->
 
-        <form>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">Login to check your search history and browse history.</small>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-            </div>
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+    <form>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email@example.com">
+            <small id="emailHelp" class="form-text text-muted">Login to check your search history and browse history.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 
 
-        <div data-bind="component: {name: currentComponent}"></div>
+    <div data-bind="component: {name: currentComponent}"></div>
 
 
-        <script data-main="js/main.js" src="js/lib/require.js/require.min.js"></script>
+    <script data-main="js/main.js" src="js/lib/require.js/require.min.js"></script>
 
-    </body>
+</body>
 </html>
