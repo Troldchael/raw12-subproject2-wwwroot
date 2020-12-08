@@ -17,6 +17,18 @@
 
 require(['knockout', 'text'], (ko) => {
 
+    ko.components.register('home', {
+        viewModel: { require: "components/home/homeB" },
+        template: { require: "text!components/home/homeB.html" }
+
+    });
+
+    ko.components.register('user', {
+        viewModel: { require: "components/actor/actorList" },
+        template: { require: "text!components/actor/actorList.html" }
+
+    });
+
     ko.components.register('browse-actors', {
         viewModel: { require: "components/actor/actorList"},
         template: { require: "text!components/actor/actorList.html" }
@@ -26,6 +38,12 @@ require(['knockout', 'text'], (ko) => {
     ko.components.register('browse-movies', {
         viewModel: { require: "components/movie/movieList" },
         template: { require: "text!components/movie/movieList.html" }
+
+    });
+
+    ko.components.register('search', {
+        viewModel: { require: "components/Search/searchbar" },
+        template: { require: "text!components/Search/searchbar.html" }
 
     });
 

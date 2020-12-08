@@ -2,10 +2,17 @@
 
     //let currentComponent = ko.observable("browse-actors");
 
-    let currentComponent = ko.observable("browse-movies");
+    let currentComponent = ko.observable("home");
     let menuElements = [
-        { name: "Home", component:"browse-movies"},
-        {name: "Actors", component: "browse-actors" }]
+        { name: "Home", component: "homeB" },
+        { name: "User", component: "home" },
+        { name: "Actors", component: "browse-actors" },
+        { name: "Movies", component: "browse-movies" },
+        { name: "Search", component: "Search" },
+        { name: "Compare", component: ""}
+
+
+    ]
     let changeContent = element => {
 
         currentComponent(element.component);
