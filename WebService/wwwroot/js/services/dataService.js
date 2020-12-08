@@ -1,11 +1,15 @@
 ﻿define([], () => {
 
     //framework resources
+    const userApiUrl = "api/users";
+    const searchApiUrl = "api/searches";
     const ratingApiUrl = "api/ratings";
+    const abooksApiUrl = "api/actorbookings";
+    const tbooksApiUrl = "api/titlebookings";
 
     //moviedata resources
-    const actorApiUrl = "api/actors";
     const movieApiUrl = "api/movies";
+    const actorApiUrl = "api/actors";
     const genreApiUrl = "api/genres";
     const detailApiUrl = "api/details";
     const omdbApiUrl = "api/omdbs";
@@ -18,26 +22,7 @@
         fetch(url).then(response => response.json()).then(callback);
     };
 
-    //browse actors
-    let getActors = (url, callback) => {
-        if (url === undefined) {
-            url = actorApiUrl;
-        }
-        getJson(url, callback);
-    };
-
-    let getActorsUrlWithPageSize = size => actorApiUrl + "?pageSize=" + size;
-
-    //browse movies
-    let getMovies = (url, callback) => {
-        if (url === undefined) {
-            url = movieApiUrl;
-        }
-        getJson(url, callback);
-    };
-
-    let getMoviesUrlWithPageSize = size => movieApiUrl + "?pageSize=" + size;
-
+    //framework dataservice
     //browse ratings
     let getRatings = (url, callback) => {
         if (url === undefined) {
@@ -48,12 +33,87 @@
 
     let getRatingsUrlWithPageSize = size => ratingApiUrl + "?pageSize=" + size;
 
+    //moviedata dataservice
+    //browse actors
+    let getActors = (url, callback) => {
+        if (url === undefined) {
+            url = actorApiUrl;
+        }
+        getJson(url, callback);
+    };
+    let getActorsUrlWithPageSize = size => actorApiUrl + "?pageSize=" + size;
+
+    //browse movies
+    let getMovies = (url, callback) => {
+        if (url === undefined) {
+            url = movieApiUrl;
+        }
+        getJson(url, callback);
+    };
+    let getMoviesUrlWithPageSize = size => movieApiUrl + "?pageSize=" + size;
+
+    //moviecompare
+    let getMoviesCompare = (url, callback) => {
+        if (url === undefined) {
+            url = movieApiUrl;
+        }
+        getJson(url, callback);
+    };
+
+    let getGenres = (url, callback) => {
+        if (url === undefined) {
+            url = genreApiUrl;
+        }
+        getJson(url, callback);
+    };
+
+    let getDetails = (url, callback) => {
+        if (url === undefined) {
+            url = detailApiUrl;
+        }
+        getJson(url, callback);
+    };
+
+    let getOmdbs = (url, callback) => {
+        if (url === undefined) {
+            url = omdbApiUrl;
+        }
+        getJson(url, callback);
+    };
+
+    let getLanguages = (url, callback) => {
+        if (url === undefined) {
+            url = languageApiUrl;
+        }
+        getJson(url, callback);
+    };
+
+    let getDirectors = (url, callback) => {
+        if (url === undefined) {
+            url = directorApiUrl;
+        }
+        getJson(url, callback);
+    };
+
+    let getMoviesCompareUrlWithPageSize = size => movieApiUrl + "?pageSize=" + size;
 
     // public
     return {
+        getMoviesCompare,
+        getMovieCompare: getJson,
         getActors,
         getActor: getJson,
-        getActorsUrlWithPageSize,
+        getGenres,
+        getGenre: getJson,
+        getDetails,
+        getDetail: getJson,
+        getOmdbs,
+        getOmdb: getJson,
+        getLanguages,
+        getLanguage: getJson,
+        getDirectors,
+        getDirector: getJson,
+        getMoviesCompareUrlWithPageSize,
         getMovies,
         getMovie: getJson,
         getMoviesUrlWithPageSize,

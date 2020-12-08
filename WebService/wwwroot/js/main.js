@@ -12,21 +12,22 @@ require(['knockout', 'text'], (ko) => {
     ko.components.register('browse-actors', {
         viewModel: { require: "components/actor/actorList"},
         template: { require: "text!components/actor/actorList.html" }
-
     });
 
     ko.components.register('browse-movies', {
         viewModel: { require: "components/movie/movieList" },
         template: { require: "text!components/movie/movieList.html" }
-
     });
 
     ko.components.register('rating-history', {
         viewModel: { require: "components/rating/ratingList" },
         template: { require: "text!components/rating/ratingList.html" }
-
     });
 
+    ko.components.register('movie-compare', {
+        viewModel: { require: "components/compare/movieCompare" },
+        template: { require: "text!components/compare/movieCompare.html" }
+    });
 
 });
 
