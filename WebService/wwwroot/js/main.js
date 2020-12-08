@@ -5,8 +5,9 @@
         text: "lib/require-text/text.min",
         jquery: "lib/jquery/jquery.min",
         bootstrap: "lib/twitter-bootstrap/js/bootstrap.bundle.min",
-        dataservice: "services/dataService",
-        postman: "services/postman"
+        dataservice: "services/dataService"
+        //postman: "services/postman"
+
     },
 
 
@@ -18,8 +19,8 @@
 require(['knockout', 'text'], (ko) => {
 
     ko.components.register('home', {
-        viewModel: { require: "components/home/homeB" },
-        template: { require: "text!components/home/homeB.html" }
+        viewModel: { require: "components/home/home" },
+        template: { require: "text!components/home/home.html" }
 
     });
 
@@ -41,9 +42,15 @@ require(['knockout', 'text'], (ko) => {
 
     });
 
-    ko.components.register('search', {
+    ko.components.register('searchbar', {
         viewModel: { require: "components/Search/searchbar" },
         template: { require: "text!components/Search/searchbar.html" }
+
+    });
+
+    ko.components.register('login', {
+        viewModel: { require: "components/login/login" },
+        template: { require: "text!components/login/login.html" }
 
     });
 

@@ -1,21 +1,27 @@
-﻿define(['knockout', 'services/postman'], (ko, postman) => {
+﻿define(['knockout', 'postman'], (ko, postman) => {
 
     //let currentComponent = ko.observable("browse-actors");
 
-    let currentComponent = ko.observable("home");
+    
     let menuElements = [
-        { name: "Home", component: "homeB" },
+        { name: "Home", component: "home" },
         { name: "User", component: "home" },
         { name: "Actors", component: "browse-actors" },
-        { name: "Movies", component: "browse-movies" },
-        { name: "Search", component: "Search" },
-        { name: "Compare", component: ""}
+        { name: "Movies", component: "browse-movies" },       
+        { name: "Compare", component: "" },
+        { name: "Login", component: "login" }
 
 
-    ]
+    ];
+    let currentComponent = ko.observable(menuElements[0].component);
     let changeContent = element => {
 
         currentComponent(element.component);
+    }
+
+    let gotoHome = () => {
+        
+        currentComponent(menuElements[0].component);
     }
 
     let isActive = element => {
@@ -31,7 +37,8 @@
         currentComponent,
         menuElements,
         changeContent,
-        isActive
+        isActive,
+        gotoHome
     };
 
 });
