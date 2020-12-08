@@ -3,7 +3,15 @@
     paths: {
         knockout: "lib/knockout/knockout-latest.debug",
         text: "lib/require-text/text.min",
-        dataservice: "services/dataService"
+        jquery: "lib/jquery/jquery.min",
+        bootstrap: "lib/twitter-bootstrap/js/bootstrap.bundle.min",
+        dataservice: "services/dataService",
+        postman: "services/postman"
+    },
+
+
+    shim: {
+        bootstrap: ['jquery']
     }
 });
 
@@ -31,7 +39,6 @@ require(['knockout', 'text'], (ko) => {
 });
 
 
-require(['knockout', 'viewModel'], (ko, vm) => {
-
+require(['knockout', 'viewModel', 'bootstrap'], (ko, vm) => {
     ko.applyBindings(vm);
 });
