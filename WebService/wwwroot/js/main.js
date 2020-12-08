@@ -9,7 +9,6 @@
         //postman: "services/postman"
     },
 
-
     shim: {
         bootstrap: ['jquery']
     }

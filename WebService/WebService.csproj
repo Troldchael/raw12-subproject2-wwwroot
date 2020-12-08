@@ -6,6 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\js\lib\services\**" />
+    <Content Remove="wwwroot\js\lib\services\**" />
+    <EmbeddedResource Remove="wwwroot\js\lib\services\**" />
+    <None Remove="wwwroot\js\lib\services\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.0" />
     <PackageReference Include="Moq" Version="4.15.1" />
@@ -15,9 +22,5 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DataServiceLib\DataServiceLib.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\js\lib\services\" />
   </ItemGroup>
 </Project>
