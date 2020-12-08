@@ -2,19 +2,17 @@
 
     //let currentComponent = ko.observable("browse-actors");
 
-    let actorsComponent = ko.observable("browse-actors");
-    let moviesComponent = ko.observable("browse-movies");
-    let ratingsComponent = ko.observable("rating-history");
-
-    let currentComponent = ko.observable("home");
-    let menuElements = ["Home", "Contact"];
+    let currentComponent = ko.observable("browse-movies");
+    let menuElements = [
+        { name: "Home", component:"browse-movies"},
+        {name: "Actors", component: "browse-actors" }]
     let changeContent = element => {
 
-        currentComponent(element.toLowerCase());
+        currentComponent(element.component);
     }
 
     let isActive = element => {
-        return element.toLowerCase() === currentComponent() ? "active" : "";
+        return element.component === currentComponent() ? "active" : "";
     }
 
     postman.subscribe("changeContent", component => {
@@ -22,10 +20,7 @@
     });
 
     return {
-        //currentComponent,
-        actorsComponent,
-        moviesComponent,
-        ratingsComponent,
+       
         currentComponent,
         menuElements,
         changeContent,
