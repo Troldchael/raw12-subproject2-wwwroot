@@ -253,5 +253,40 @@ namespace DataServiceLib
         {
             return DirectorsToList().Count;
         }
+
+
+        // moviecompare dataservice
+        /*public IList<MovieCompare> ComparesToList()
+        {
+            var ctx = new Raw12Context();
+            var compares = ctx.Movies.ToList();
+            return compares;
+        }
+
+        public IList<MovieCompare> GetCompares()
+        {
+            return ComparesToList();
+        }
+
+        public MovieCompare GetCompare(string id)
+        {
+            var ctx = new Raw12Context();
+            var compares = ctx.Movies;
+
+            return compares.FirstOrDefault(x => x.TitleId == id);
+        }
+
+        public IList<Directors> GetDirectorInfo(int page, int pageSize)
+        {
+            return DirectorsToList()
+                .Skip(page * pageSize)
+                .Take(pageSize)
+                .ToList();
+        }
+
+        public int NumberOfDirectors()
+        {
+            return DirectorsToList().Count;
+        }*/
     }
 }

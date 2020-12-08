@@ -50,8 +50,9 @@ namespace DataServiceLib
         Languages GetLanguage(string id);
         IList<Languages> GetLanguageInfo(int page, int pageSize);
         int NumberOfLanguages();
-		
-		//moviecompare interface
+
+
+        //moviecompare interface
         /*IList<MovieCompare> GetCompares();
         MovieCompare GetCompare(string id);
         IList<MovieCompare> GetCompareInfo(int page, int pageSize);

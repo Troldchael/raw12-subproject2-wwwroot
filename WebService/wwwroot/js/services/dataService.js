@@ -1,7 +1,17 @@
 ﻿define([], () => {
+
+    //framework resources
+    const ratingApiUrl = "api/ratings";
+
+    //moviedata resources
     const actorApiUrl = "api/actors";
     const movieApiUrl = "api/movies";
-    const ratingApiUrl = "api/ratings";
+    const genreApiUrl = "api/genres";
+    const detailApiUrl = "api/details";
+    const omdbApiUrl = "api/omdbs";
+    const languageApiUrl = "api/languages";
+    const directorApiUrl = "api/directors";
+
 
     //private
     let getJson = (url, callback) => {
