@@ -5,8 +5,8 @@
         text: "lib/require-text/text.min",
         jquery: "lib/jquery/jquery.min",
         bootstrap: "lib/twitter-bootstrap/js/bootstrap.bundle.min",
-        dataservice: "services/dataService",
-        postman: "services/postman"
+        dataservice: "services/dataService"
+        //postman: "services/postman"
     },
 
 
@@ -18,8 +18,8 @@
 require(['knockout', 'text'], (ko) => {
 
     ko.components.register('home', {
-        viewModel: { require: "components/home/homeB" },
-        template: { require: "text!components/home/homeB.html" }
+        viewModel: { require: "components/home/home" },
+        template: { require: "text!components/home/home.html" }
 
     });
 
@@ -42,8 +42,8 @@ require(['knockout', 'text'], (ko) => {
     });
 
     ko.components.register('search', {
-        viewModel: { require: "components/Search/searchbar" },
-        template: { require: "text!components/Search/searchbar.html" }
+        viewModel: { require: "components/search/searchbar" },
+        template: { require: "text!components/search/searchbar.html" }
 
     });
 
@@ -52,6 +52,12 @@ require(['knockout', 'text'], (ko) => {
         template: { require: "text!components/rating/ratingList.html" }
 
     });
+
+    /*ko.components.register('compare', {
+        viewModel: { require: "components/rating/ratingList" },
+        template: { require: "text!components/rating/ratingList.html" }
+
+    });*/
 
 
 });

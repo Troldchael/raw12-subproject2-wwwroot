@@ -1,10 +1,9 @@
-﻿define(['postman'], (postman) => {
+﻿define([], () => {
     return function () {
-        <ul class="navbar-nav mr-auto ml-auto">
-            </ul>
-        }
+
         return {
+
         };
     }
-    
 });
+ 
