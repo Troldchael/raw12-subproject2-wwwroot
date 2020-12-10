@@ -10,7 +10,6 @@
 
     },
 
-
     shim: {
         bootstrap: ['jquery']
     }
