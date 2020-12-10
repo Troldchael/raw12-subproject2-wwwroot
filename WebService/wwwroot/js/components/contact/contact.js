@@ -1,8 +1,0 @@
-﻿define([], () => {
-    return function () {
-
-        return {
-
-        };
-    }
-});
