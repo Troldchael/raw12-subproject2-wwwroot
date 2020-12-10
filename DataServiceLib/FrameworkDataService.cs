@@ -108,6 +108,9 @@ namespace DataServiceLib
             var result = ctx.SearchHistory.FromSqlInterpolated($"select * from string_search({"%" + keyword + "%"})");
 
             return result.ToList();
+
+            // use the schema column name instead of the table name
+            // RETURNS TABLE("movie_id" bpchar, "movie_title" text) AS $BODY$
         }
 
         public IList<SearchHistory> GetStringSearches(string keyword)

@@ -1,12 +1,5 @@
-﻿define(['postman'], (postman) => {
+﻿define([], () => {
     return function () {
 
-        let gotoContact = () => {
-            postman.publish("changeContent", "contact");
-        }
-
-        return {
-            gotoContact
-        };
     }
 });
