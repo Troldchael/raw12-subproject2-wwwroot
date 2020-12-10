@@ -17,6 +17,7 @@
     let changeContent = element => {
 
         currentComponent(element.component);
+        //debugger;
     }
 
     let gotoHome = () => {

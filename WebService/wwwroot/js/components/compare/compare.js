@@ -1,1 +1,5 @@
-﻿
+﻿define([], () => {
+    return function () {
+
+    }
+});
