@@ -24,8 +24,8 @@ require(['knockout', 'text'], (ko) => {
     });
 
     ko.components.register('user', {
-        viewModel: { require: "components/actor/actorList" },
-        template: { require: "text!components/actor/actorList.html" }
+        viewModel: { require: "components/user/user" },
+        template: { require: "text!components/user/user.html" }
 
     });
 

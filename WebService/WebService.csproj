@@ -20,5 +20,6 @@
   <ItemGroup>
     <Folder Include="wwwroot\js\lib\services\" />
     <Folder Include="wwwroot\js\components\login\" />
+    <Folder Include="wwwroot\js\components\user\" />
   </ItemGroup>
 </Project>

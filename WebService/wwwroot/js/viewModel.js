@@ -5,7 +5,7 @@
     
     let menuElements = [
         { name: "Home", component: "home" },
-        { name: "User", component: "home" },
+        { name: "User", component: "user" },
         { name: "Actors", component: "browse-actors" },
         { name: "Movies", component: "browse-movies" },       
         { name: "Compare", component: "" },
