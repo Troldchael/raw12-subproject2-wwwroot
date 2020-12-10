@@ -8,7 +8,7 @@
         { name: "User", component: "home" },
         { name: "Actors", component: "browse-actors" },
         { name: "Movies", component: "browse-movies" },       
-        { name: "Compare", component: "" },
+        { name: "Compare", component: "movie-compare" },
         { name: "Login", component: "login" }
 
 

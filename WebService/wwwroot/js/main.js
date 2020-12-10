@@ -59,9 +59,13 @@ require(['knockout', 'text'], (ko) => {
 
     });
 
+    ko.components.register('movie-compare', {
+        viewModel: { require: "components/compare/compare" },
+        template: { require: "text!components/compare/compare.html" }
+
+    });
 
 });
-
 
 require(['knockout', 'viewModel', 'bootstrap'], (ko, vm) => {
     ko.applyBindings(vm);
