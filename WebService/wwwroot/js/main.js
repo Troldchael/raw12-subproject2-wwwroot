@@ -43,7 +43,7 @@ require(['knockout', 'text'], (ko) => {
     });
 
     ko.components.register('searchbar', {
-        viewModel: { require: "components/search/searchbar" },
+        viewModel: { require: "components/Search/searchbar" },
         template: { require: "text!components/Search/searchbar.html" }
 
     });
