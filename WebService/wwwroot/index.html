@@ -6,20 +6,62 @@
 
 </head>
 <body class="container-fluid">
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbarColor02">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbarColor02">
         <a data-bind="click: gotoHome" class="navbar-brand" href="#">2MCON</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav" data-bind="foreach: menuElements">
-              
+
                 <li class="nav-item" data-bind="css: $parent.isActive($data)">
                     <a class="nav-link" href="#" data-bind="click: $parent.changeContent">
                         <span data-bind="text: name"></span>
+
                     </a>
                 </li>
             </ul>
+        </div>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Login
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+                <div class="row justify-content-left">
+                    <div class="col-8 col-md-8 col-lg-8">
+                        <form class="card card-sm">
+                            <div class="card-body row no-gutters align-items-center">
+
+                                <div class="form-group">
+                                    <label for="inputUsernameEmail">Username</label>
+                                    <input type="text" class="form-control" id="inputUsernameEmail">
+                                </div>
+                                <div class="form-group">
+                                    <a class="pull-right" href="#">Forgot password?</a>
+                                    <label for="inputPassword">Password</label>
+                                    <input type="password" class="form-control" id="inputPassword">
+                                </div>
+                                <div class="checkbox pull-right">
+                                    <label>
+                                        <input type="checkbox">
+                                        Remember me
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn btn-primary">
+                                    Log In
+                                </button>
+                            </div>
+
+                        </form>
+
+
+                    </div>
+
+                </div>
+           
+            </div>
+
         </div>
     </nav>
     <div></div>
