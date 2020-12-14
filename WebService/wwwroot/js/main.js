@@ -6,6 +6,9 @@
         jquery: "lib/jquery/jquery.min",
         bootstrap: "lib/twitter-bootstrap/js/bootstrap.bundle.min",
         dataservice: "services/dataService"
+
+        //frameworkDataservice: "services/frameworkDataservice"
+        //movieDataservice: "services/movieDataservice"
         //postman: "services/postman"
 
     },
@@ -65,9 +68,7 @@ require(['knockout', 'text'], (ko) => {
 
     });
 
-
 });
-
 
 require(['knockout', 'viewModel', 'bootstrap'], (ko, vm) => {
     ko.applyBindings(vm);
