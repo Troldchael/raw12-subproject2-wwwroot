@@ -38,7 +38,6 @@
 
     let getRatingsUrlWithPageSize = size => ratingApiUrl + "?pageSize=" + size;
 
-
     // public
     return {
         getActors,

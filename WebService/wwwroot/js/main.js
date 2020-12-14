@@ -41,6 +41,12 @@ require(['knockout', 'text'], (ko) => {
 
     });
 
+    ko.components.register('movie-compare', {
+        viewModel: { require: "components/compare/compare" },
+        template: { require: "text!components/compare/compare.html" }
+
+    });
+
     ko.components.register('searchbar', {
         viewModel: { require: "components/Search/searchbar" },
         template: { require: "text!components/Search/searchbar.html" }
