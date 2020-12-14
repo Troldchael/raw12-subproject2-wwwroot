@@ -105,7 +105,7 @@ namespace DataServiceLib
         public IList<SearchHistory> StringSearchToList(string keyword)
         {
             var ctx = new Raw12Context();
-            var result = ctx.SearchHistory.FromSqlInterpolated($"select * from string_search({"%" + keyword + "%"})");
+            var result = ctx.SearchHistory.FromSqlRaw($"select * from string_search({"%" + keyword + "%"})");
 
             return result.ToList();
 

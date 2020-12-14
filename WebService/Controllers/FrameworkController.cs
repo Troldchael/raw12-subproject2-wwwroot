@@ -175,8 +175,8 @@ namespace WebService.Controllers
             return Ok(result);
         }
 
-        // string search get method 
-        [HttpGet("{word}", Name = nameof(GetStringSearches))]
+        // tried to make a string search get method 
+        /*[HttpGet("{word}", Name = nameof(GetStringSearches))]
         public IActionResult GetStringSearches(int page = 0, int pageSize = 10)
         {
             pageSize = CheckPageSize(pageSize);
@@ -186,7 +186,7 @@ namespace WebService.Controllers
             var result = CreateResult(page, pageSize, searches);
 
             return Ok(result);
-        }
+        }*/
 
         [HttpGet("{id}", Name = nameof(GetSearch))]
         public IActionResult GetSearch(int id)
