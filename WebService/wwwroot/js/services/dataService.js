@@ -34,14 +34,20 @@
     let getRatingsUrlWithPageSize = size => ratingApiUrl + "?pageSize=" + size;
 
     // example method for a POST (create) in frontend dataservice
-    let createRatings = function (category, callback) {
+/*    let createRatings = function(rating, callback) {
 
         let headers = new Headers();
         headers.append("Content-Type", "application/json");
         fetch("api/ratings", { method: "POST", body: JSON.stringify(ratings), headers })
             .then(response => response.json())
             .then(data => callback(data));
-    };
+    };*/
+
+    // example on create method being used
+    /*createRatings({Name: "ffsf", Description: "sfsfsf"},
+        function(data) {
+        //console.log(data);
+    });*/
 
     //moviedata dataservice
     //browse actors
