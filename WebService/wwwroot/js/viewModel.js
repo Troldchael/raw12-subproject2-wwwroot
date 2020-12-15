@@ -1,4 +1,6 @@
-﻿define(['knockout', 'postman'], (ko, postman) => {
+﻿// this is like the viewmodel for the index page. each component have their own viewmodels
+
+define(['knockout', 'postman'], (ko, postman) => {
 
     let menuElements = [
         { name: "Home", component: "home" },

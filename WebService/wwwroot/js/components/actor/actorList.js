@@ -45,6 +45,5 @@
             showNext,
             enableNext
         };
-
     }
 })
