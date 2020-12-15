@@ -22,7 +22,6 @@
         }
     }
 
-
     return {
         subscribe,
         publish

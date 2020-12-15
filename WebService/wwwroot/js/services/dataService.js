@@ -16,7 +16,6 @@
     const languageApiUrl = "api/languages";
     const directorApiUrl = "api/directors";
 
-
     //private
     let getJson = (url, callback) => {
         fetch(url).then(response => response.json()).then(callback);

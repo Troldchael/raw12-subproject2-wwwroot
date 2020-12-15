@@ -29,7 +29,6 @@
     });
 
     return {
-       
         currentComponent,
         menuElements,
         changeContent,

@@ -1,9 +1,8 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>2MCON</title>
+    <title>Raw group 12 movie application</title>
     <link href="css/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
-
 </head>
 <body class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbarColor02">
@@ -14,27 +13,22 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav" data-bind="foreach: menuElements">
-
                 <li class="nav-item" data-bind="css: $parent.isActive($data)">
                     <a class="nav-link" href="#" data-bind="click: $parent.changeContent">
                         <span data-bind="text: name"></span>
-
                     </a>
                 </li>
             </ul>
-
         </div>
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Login
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
                 <div class="row justify-content-center">
                     <div class="col-15 col-md-12 col-lg-15">
                         <form class="card card-sm">
                             <div class="card-body row no-gutters align-items-left">
-
                                 <div class="form-group">
                                     <label for="inputUsernameEmail">Username</label>
                                     <input type="text" class="form-control" id="inputUsernameEmail">
@@ -65,8 +59,6 @@
             </div>
 
         </div>
-
-
     </nav>
     <div></div>
         <br />
@@ -91,10 +83,8 @@
             </div>
             <!--end of col-->
         </div> <br />
-
         <div id="content" class="row justify-content-center" data-bind="component: {name: currentComponent}"></div>
         <script data-main="js/main.js" src="js/lib/require.js/require.min.js"></script>
-
 </body>
 </html>
 

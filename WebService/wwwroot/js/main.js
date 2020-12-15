@@ -20,8 +20,8 @@
 require(['knockout', 'text'], (ko) => {
 
     ko.components.register('home', {
-        viewModel: { require: "components/home/home" },
-        template: { require: "text!components/home/home.html" }
+        viewModel: { require: "components/home/home" }, // homes viemmodel
+        template: { require: "text!components/home/home.html" } //homes view
 
     });
 
