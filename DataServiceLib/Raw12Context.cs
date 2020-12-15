@@ -23,7 +23,7 @@ namespace DataServiceLib
         public DbSet<TitleBookmarking> TitleBook { get; set; }
         public DbSet<ActorBookmarking> ActorBook { get; set; }
 
-        //Moviedata
+        //moviedata
         public DbSet<Actors> Actors { get; set; }
         public DbSet<Movies> Movies { get; set; }
         public DbSet<Genres> Genres { get; set; }
@@ -122,6 +122,4 @@ namespace DataServiceLib
             modelBuilder.Entity<Directors>().Property(x => x.DirectorId).HasColumnName("director_id");
         }
     }
-
-    
 }

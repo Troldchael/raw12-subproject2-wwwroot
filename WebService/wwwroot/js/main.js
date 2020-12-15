@@ -10,7 +10,6 @@
         //frameworkDataservice: "services/frameworkDataservice"
         //movieDataservice: "services/movieDataservice"
         //postman: "services/postman"
-
     },
 
     shim: {
